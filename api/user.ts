@@ -18,7 +18,7 @@ router.get("/users", (req,res)=>{
 router.post("/user", (req, res) => {
     let user: UserPostResponse = req.body;
     let sql =
-          "INSERT INTO `users`(`user_email`, `user_pass`, `user_gender`, `user_name`, `user_age`,) VALUES (?,?,?,?,?)";
+          "INSERT INTO `users`(`user_email`, `user_pass`, `user_gender`, `user_name`, `user_age`) VALUES (?,?,?,?,?)";
     sql = mysql.format(sql, [
         user.user_email,
         user.user_pass,
