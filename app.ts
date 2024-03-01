@@ -7,7 +7,7 @@ console.log("asdas");
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 
-
+console.log("asd");
 app.use(
     cors({
       origin: "*",
