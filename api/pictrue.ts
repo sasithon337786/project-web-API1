@@ -8,14 +8,14 @@ export const router = express.Router();
 
 
 router.get("/all", (req,res)=>{
-        const sql = "select * from pictrue";
+  const sql = "SELECT * FROM pictrue ORDER BY RAND() LIMIT 2";
         conn.query(sql,(err,result)=>{
             res.json(result);
         })
     }
 );
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", async (req, res) => { 
     let id = +req.params.id;
     let pictrue: PictruepostResponse = req.body;
     let pictrueOriginal: PictruepostResponse | undefined;
